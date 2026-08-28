@@ -55,7 +55,6 @@ from forms import (
 )
 
 load_dotenv()
-print("SECRET KEY:", os.getenv("SECRET_KEY"))
 
 
 # =======FLASK APPLICATION==========

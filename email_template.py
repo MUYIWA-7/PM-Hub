@@ -91,7 +91,8 @@ Global Royal Estate Manager
 
     with smtplib.SMTP(
         MAIL_SERVER,
-        MAIL_PORT
+        MAIL_PORT,
+        timeout=20
     ) as server:
 
         server.starttls()
