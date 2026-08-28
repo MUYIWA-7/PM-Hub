@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Add Property - Global Royal Estate Manager
+{% endblock %}
+
+{% block css %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/add_property.css') }}"
+>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <a href="{{ url_for('properties') }}" class="back-btn">
+        ← Back
+    </a>
+
+    <h1>
+        Add Property
+    </h1>
+
+    <p>
+        Add a new property to your estate.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     PROPERTY FORM
+========================== -->
+
+<section class="form-section">
+
+    <form
+        method="POST"
+        class="property-form"
+    >
+
+        {{ form.hidden_tag() }}
+
+
+        <!-- Property Name -->
+
+        <div class="form-group">
+
+            {{ form.name.label }}
+
+            {{ form.name(
+                class="form-control",
+                placeholder="Enter property name"
+            ) }}
+
+            {% for error in form.name.errors %}
+
+                <span class="form-error">
+                    {{ error }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Property Type -->
+
+        <div class="form-group">
+
+            {{ form.property_type.label }}
+
+            {{ form.property_type(
+                class="form-control"
+            ) }}
+
+            {% for error in form.property_type.errors %}
+
+                <span class="form-error">
+                    {{ error }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Total Units -->
+
+        <div class="form-group">
+
+            {{ form.total_units.label }}
+
+            {{ form.total_units(
+                class="form-control",
+                placeholder="Enter total number of units"
+            ) }}
+
+            {% for error in form.total_units.errors %}
+
+                <span class="form-error">
+                    {{ error }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Address -->
+
+        <div class="form-group">
+
+            {{ form.address.label }}
+
+            {{ form.address(
+                class="form-control",
+                placeholder="Enter property address"
+            ) }}
+
+            {% for error in form.address.errors %}
+
+                <span class="form-error">
+                    {{ error }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Submit -->
+
+        <div class="form-actions">
+
+            {{ form.submit(
+                class="submit-btn"
+            ) }}
+
+        </div>
+
+    </form>
+
+</section>
+
+{% endblock %}

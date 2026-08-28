@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {% block title %}
+            Global Royal Estate Manager
+        {% endblock %}
+    </title>
+
+    <!-- Main site stylesheet -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/base.css') }}"
+    >
+
+    <!-- Page-specific stylesheet -->
+    {% block css %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    {% if current_user.is_authenticated and current_user.role == "manager" %}
+
+        <header class="main-header">
+
+            <nav class="navbar">
+
+                <a
+                    href="{{ url_for('manager_dashboard') }}"
+                    class="navbar-logo"
+                >
+                    GLOBAL ROYAL
+                    <span>ESTATE MANAGER</span>
+                </a>
+
+
+                <div class="nav-links">
+
+                    <a href="{{ url_for('manager_dashboard') }}">
+                        Dashboard
+                    </a>
+
+                    <a href="{{ url_for('properties') }}">
+                        Properties
+                    </a>
+
+                    <a
+                        href="{{ url_for('notifications') }}"
+                        class="notification-link"
+                    >
+                        Notifications
+
+                        {% if notification_count > 0 %}
+
+                            <span class="notification-badge">
+                                {{ notification_count }}
+                            </span>
+
+                        {% endif %}
+
+                    </a>
+
+                    <a
+                        href="{{ url_for('logout') }}"
+                        class="logout-link"
+                    >
+                        Logout
+                    </a>
+
+                </div>
+
+            </nav>
+
+        </header>
+
+    {% endif %}
+
+
+    <!-- =========================
+         FLASH MESSAGES
+    ========================== -->
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+
+        {% if messages %}
+
+            <div class="flash-container">
+
+                {% for category, message in messages %}
+
+                    <div class="flash-message {{ category }}">
+                        {{ message }}
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        {% endif %}
+
+    {% endwith %}
+
+
+    <!-- =========================
+         MAIN PAGE CONTENT
+    ========================== -->
+
+    <main class="page-content">
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+
+</body>
+
+</html>

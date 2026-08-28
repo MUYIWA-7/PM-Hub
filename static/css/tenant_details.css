@@ -1,0 +1,310 @@
+/* =========================
+   TENANT DETAILS
+========================= */
+
+.page-header {
+    padding: 25px 7% 35px;
+    background: #f5f2ec;
+}
+
+.page-header h1 {
+    margin-top: 25px;
+    font-size: 42px;
+    color: #182d38;
+}
+
+.page-header p {
+    color: #687277;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 25px;
+    padding: 9px 15px;
+    background: #ffffff;
+    border: 1px solid #c9c5bd;
+    color: #263741;
+    font-size: 15px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #12232d;
+    border-color: #12232d;
+    color: #c66f48;
+    transform: translateX(-2px);
+}
+
+
+
+/* =========================
+   TOP SECTION
+========================= */
+
+.top-section {
+    padding: 0 7% 35px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    background: #f5f2ec;
+}
+
+.bottom-section{
+    background: #f5f2ec;
+    padding-bottom: 10px;
+}
+
+
+/* =========================
+   INFORMATION CARDS
+========================= */
+
+.tenant-info,
+.payment-summary {
+    background: #ffffff;
+    border: 1px solid #ddd8cf;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(25, 39, 47, 0.06);
+}
+
+.tenant-info {
+    border-top: 4px solid #c66f48;
+}
+
+.payment-summary {
+    border-top: 4px solid #12232d;
+}
+
+.tenant-info h2,
+.payment-summary h2 {
+    margin-bottom: 25px;
+    color: #182d38;
+    font-size: 22px;
+}
+
+.tenant-info p,
+.payment-summary p {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee9df;
+    color: #687277;
+}
+
+.tenant-info p:last-child,
+.payment-summary p:last-child {
+    border-bottom: none;
+}
+
+.tenant-info strong,
+.payment-summary strong {
+    color: #263741;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    display: inline-block;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.status.paid {
+    background: #e3f1e8;
+    color: #287044;
+}
+
+.status.part-paid {
+    background: #f8eadf;
+    color: #a95735;
+}
+
+.status.unpaid {
+    background: #f5dddd;
+    color: #a33a3a;
+}
+
+
+/* =========================
+   RECORD PAYMENT
+========================= */
+
+.record-payment {
+    margin: 0 7% 35px;
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #ddd8cf;
+    box-shadow: 0 10px 30px rgba(25, 39, 47, 0.06);
+    
+}
+
+.record-payment h2,
+.payment-history h2 {
+    color: #182d38;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.payment-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 20px;
+    align-items: end;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #263741;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cfc9bf;
+    background: #fdfcf9;
+    color: #182d38;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #c66f48;
+    box-shadow: 0 0 0 3px rgba(198, 111, 72, 0.10);
+}
+
+
+/* =========================
+   PAYMENT BUTTON
+========================= */
+
+.save-payment-btn {
+    padding: 13px 22px;
+    border: 1px solid #c66f48;
+    background: #c66f48;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.save-payment-btn:hover {
+    background: #a95735;
+    border-color: #a95735;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   FORM ERRORS
+========================= */
+
+.form-error {
+    color: #a33a3a;
+    font-size: 12px;
+}
+
+
+/* =========================
+   PAYMENT HISTORY
+========================= */
+
+.payment-history {
+    margin: 0 7% 60px;
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #ddd8cf;
+    box-shadow: 0 10px 30px rgba(25, 39, 47, 0.06);
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.payment-history table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.payment-history th {
+    padding: 15px;
+    text-align: left;
+    background: #12232d;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.payment-history td {
+    padding: 15px;
+    border-bottom: 1px solid #eee9df;
+    color: #526068;
+    font-size: 14px;
+}
+
+.payment-history tbody tr:hover {
+    background: #faf8f4;
+}
+
+.payment-history td:last-child {
+    color: #c66f48;
+    font-weight: 700;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .top-section {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-form {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header,
+    .top-section,
+    .record-payment,
+    .payment-history {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .record-payment,
+    .payment-history {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .page-header h1 {
+        font-size: 34px;
+    }
+}

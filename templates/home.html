@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Global Royal Estate Manager</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/home.css') }}"
+    >
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================== -->
+
+<header class="navbar">
+
+    <a href="{{ url_for('home') }}" class="logo">
+        GLOBAL ROYAL
+        <span>ESTATE MANAGER</span>
+    </a>
+
+    <nav>
+
+        <a href="#features">Features</a>
+
+        <a href="#how-it-works">How It Works</a>
+
+        <a href="#about">About</a>
+
+        <a href="{{ url_for('login') }}">
+            Login
+        </a>
+
+        <a
+            href="{{ url_for('signup') }}"
+            class="nav-btn"
+        >
+            Get Started
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="section-label">
+            SMARTER ESTATE MANAGEMENT
+        </p>
+
+        <h1>
+            Manage Your Properties.
+            <span>Manage Everything.</span>
+        </h1>
+
+        <p class="hero-text">
+            Global Royal Estate Manager helps property managers
+            organize properties, tenants, rent payments and
+            rental deadlines in one powerful platform.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="{{ url_for('signup') }}"
+                class="primary-btn"
+            >
+                Get Started
+            </a>
+
+            <a
+                href="#features"
+                class="secondary-btn"
+            >
+                Explore Features
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Dashboard Preview -->
+
+    <div class="hero-dashboard">
+
+        <div class="dashboard-header">
+
+            <strong>
+                Estate Overview
+            </strong>
+
+            <span>
+                ●
+            </span>
+
+        </div>
+
+        <div class="dashboard-cards">
+
+            <div>
+                <strong>12</strong>
+                <span>Properties</span>
+            </div>
+
+            <div>
+                <strong>86</strong>
+                <span>Tenants</span>
+            </div>
+
+            <div>
+                <strong>64</strong>
+                <span>Occupied</span>
+            </div>
+
+            <div>
+                <strong>22</strong>
+                <span>Vacant</span>
+            </div>
+
+        </div>
+
+        <div class="dashboard-alert">
+
+            <span>
+                Rental Notifications
+            </span>
+
+            <strong>
+                5
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="second-section">
+
+<!-- =========================
+     INTRO
+========================== -->
+
+<section class="intro">
+
+    <p class="section-label">
+        EVERYTHING IN ONE PLACE
+    </p>
+
+    <h2>
+        Everything You Need to Manage Your Estate
+    </h2>
+
+    <p>
+        Keep your properties, tenants, payments and
+        rental deadlines organized from one central platform.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     FEATURES
+========================== -->
+
+<section class="features" id="features">
+
+    <article class="feature-card">
+
+        <span class="feature-number">
+            01
+        </span>
+
+        <h3>
+            Property Management
+        </h3>
+
+        <p>
+            Organize multiple properties and keep
+            important property information accessible.
+        </p>
+
+    </article>
+
+
+    <article class="feature-card">
+
+        <span class="feature-number">
+            02
+        </span>
+
+        <h3>
+            Tenant Management
+        </h3>
+
+        <p>
+            Manage tenant details, units, rent periods
+            and occupancy records with ease.
+        </p>
+
+    </article>
+
+
+    <article class="feature-card">
+
+        <span class="feature-number">
+            03
+        </span>
+
+        <h3>
+            Payment Tracking
+        </h3>
+
+        <p>
+            Record rent payments and monitor paid,
+            partially paid and outstanding balances.
+        </p>
+
+    </article>
+
+
+    <article class="feature-card">
+
+        <span class="feature-number">
+            04
+        </span>
+
+        <h3>
+            Rental Notifications
+        </h3>
+
+        <p>
+            Know when rent has expired or when a
+            tenant's rental period is approaching.
+        </p>
+
+    </article>
+
+</section>
+
+</div>
+
+
+<!-- =========================
+     HOW IT WORKS
+========================== -->
+
+<section
+    class="how-it-works"
+    id="how-it-works"
+>
+
+    <div class="section-heading">
+
+        <p class="section-label">
+            HOW IT WORKS
+        </p>
+
+        <h2>
+            Simple Management.
+            <span>Better Control.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <span>01</span>
+
+            <h3>
+                Add Properties
+            </h3>
+
+            <p>
+                Create your property records and
+                define the available units.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <span>02</span>
+
+            <h3>
+                Add Tenants
+            </h3>
+
+            <p>
+                Assign tenants to their units and
+                store their rental information.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <span>03</span>
+
+            <h3>
+                Track Payments
+            </h3>
+
+            <p>
+                Record rent payments and monitor
+                outstanding balances.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <span>04</span>
+
+            <h3>
+                Stay Informed
+            </h3>
+
+            <p>
+                Receive notifications about upcoming
+                and expired rental periods.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT / WHY GLOBAL ROYAL
+========================== -->
+
+<section
+    class="about"
+    id="about"
+>
+
+    <div class="about-visual">
+
+        <div class="building">
+            GLOBAL
+        </div>
+
+    </div>
+
+
+    <div class="about-content">
+
+        <p class="section-label">
+            WHY GLOBAL ROYAL
+        </p>
+
+        <h2>
+            Built for modern
+            <span>estate management.</span>
+        </h2>
+
+        <p>
+            Managing an estate means keeping track of
+            properties, tenants, payments and deadlines.
+            Global Royal brings these responsibilities
+            together in one organized workspace.
+        </p>
+
+
+        <ul>
+
+            <li>
+                Manage multiple properties
+            </li>
+
+            <li>
+                Track occupied and vacant units
+            </li>
+
+            <li>
+                Keep tenant records organized
+            </li>
+
+            <li>
+                Monitor rent payments
+            </li>
+
+            <li>
+                Stay ahead of rental deadlines
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================== -->
+
+<section class="cta">
+
+    <p class="section-label">
+        GET STARTED TODAY
+    </p>
+
+    <h2>
+        Take control of your
+        <span>property management.</span>
+    </h2>
+
+    <p>
+        Bring your estate operations together
+        with Global Royal Estate Manager.
+    </p>
+
+    <a
+        href="{{ url_for('signup') }}"
+        class="primary-btn"
+    >
+        Create Your Account
+    </a>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        GLOBAL ROYAL
+
+        <span>
+            ESTATE MANAGER
+        </span>
+
+    </div>
+
+    <p>
+        © 2026 Global Royal Estate Manager.
+        All rights reserved.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
+

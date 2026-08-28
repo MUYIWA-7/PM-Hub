@@ -1,0 +1,230 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Dashboard - Global Royal Estate Manager
+{% endblock %}
+
+{% block css %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/manager_dashboard.css') }}"
+>
+{% endblock %}
+
+{% block content %}
+
+<main class="dashboard-page">
+
+    <!-- =========================
+         DASHBOARD HEADER
+    ========================== -->
+
+    <section class="dashboard-header">
+
+        <div>
+
+            <p class="section-label">
+                ESTATE OVERVIEW
+            </p>
+
+            <h1>
+                Dashboard
+            </h1>
+
+            <p class="welcome-text">
+                Welcome back,
+                <strong>{{ current_user.name }}</strong>
+            </p>
+
+            <p class="business-name">
+                {{ current_user.business.name }}
+            </p>
+
+        </div>
+
+        <a
+            href="{{ url_for('add_property') }}"
+            class="dashboard-action"
+        >
+            + Add Property
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         OVERVIEW
+    ========================== -->
+
+    <section class="dashboard-overview">
+
+        <div class="section-heading">
+
+            <div>
+
+                <p class="section-label">
+                    AT A GLANCE
+                </p>
+
+                <h2>
+                    Estate Overview
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="overview">
+
+            <div class="overview-card">
+
+                <div class="card-top">
+                    <span>01</span>
+                </div>
+
+                <p class="overview-number">
+                    {{ total_properties }}
+                </p>
+
+                <h3>
+                    Properties
+                </h3>
+
+                <p class="card-description">
+                    Total properties under management
+                </p>
+
+            </div>
+
+
+            <div class="overview-card">
+
+                <div class="card-top">
+                    <span>02</span>
+                </div>
+
+                <p class="overview-number">
+                    {{ total_tenants }}
+                </p>
+
+                <h3>
+                    Tenants
+                </h3>
+
+                <p class="card-description">
+                    Registered tenants across properties
+                </p>
+
+            </div>
+
+
+            <div class="overview-card occupied">
+
+                <div class="card-top">
+                    <span>03</span>
+                </div>
+
+                <p class="overview-number">
+                    {{ occupied_units }}
+                </p>
+
+                <h3>
+                    Occupied Units
+                </h3>
+
+                <p class="card-description">
+                    Units currently occupied
+                </p>
+
+            </div>
+
+
+            <div class="overview-card vacant">
+
+                <div class="card-top">
+                    <span>04</span>
+                </div>
+
+                <p class="overview-number">
+                    {{ vacant_units }}
+                </p>
+
+                <h3>
+                    Vacant Units
+                </h3>
+
+                <p class="card-description">
+                    Units currently available
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROPERTY MANAGEMENT
+    ========================== -->
+
+    <section class="dashboard-properties">
+
+        <div class="property-heading">
+
+            <div>
+
+                <p class="section-label">
+                    PROPERTY MANAGEMENT
+                </p>
+
+                <h2>
+                    Your Properties
+                </h2>
+
+            </div>
+
+            <a
+                href="{{ url_for('properties') }}"
+                class="view-all"
+            >
+                View All →
+            </a>
+
+        </div>
+
+
+        <a
+            href="{{ url_for('properties') }}"
+            class="properties-card"
+        >
+
+            <div class="properties-icon">
+                01
+            </div>
+
+            <div>
+
+                <h3>
+                    Properties
+                </h3>
+
+                <p>
+                    View and manage your properties,
+                    tenants and available units.
+                </p>
+
+            </div>
+
+            <span class="card-arrow">
+                →
+            </span>
+
+        </a>
+
+    </section>
+
+</main>
+
+{% endblock %}

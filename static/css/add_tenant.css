@@ -1,0 +1,168 @@
+/* =========================
+   ADD TENANT PAGE
+========================= */
+
+.page-header {
+    padding: 25px 7% 35px;
+    background: #f5f2ec;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-bottom: 22px;
+    padding: 8px 15px;
+
+    background: #ffffff;
+    border: 1px solid #d9d4ca;
+
+    color: #263741;
+    font-size: 15px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #12232d;
+    border-color: #12232d;
+    color: #c66f48;
+}
+
+.page-header h1 {
+    margin-bottom: 8px;
+
+    color: #182d38;
+    font-size: 42px;
+    line-height: 1.1;
+}
+
+.page-header p {
+    color: #687277;
+    font-size: 15px;
+}
+
+.page-header strong {
+    color: #c66f48;
+}
+
+
+/* =========================
+   FORM SECTION
+========================= */
+
+.form-section {
+    padding: 0 7% 70px;
+    background: #f5f2ec;
+    align-items:center;
+}
+
+.tenant-form {
+    max-width: 700px;
+
+    padding: 40px;
+
+    background: #ffffff;
+    border: 1px solid #ddd8cf;
+
+    box-shadow: 0 15px 35px rgba(25, 39, 47, 0.08);
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #182d38;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.form-control {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #d4d0c8;
+    background: #faf9f6;
+
+    color: #182d38;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #c66f48;
+    background: #ffffff;
+
+    box-shadow: 0 0 0 3px rgba(198, 111, 72, 0.12);
+}
+
+.form-control::placeholder {
+    color: #9aa1a4;
+}
+
+
+/* =========================
+   FORM ERRORS
+========================= */
+
+.form-error {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #b34f3d;
+    font-size: 12px;
+}
+
+
+/* =========================
+   FORM ACTION
+========================= */
+
+.form-actions {
+    margin-top: 30px;
+}
+
+.submit-btn {
+    padding: 13px 25px;
+
+    border: 1px solid #c66f48;
+
+    background: #c66f48;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #a95735;
+    border-color: #a95735;
+
+    transform: translateY(-2px);
+}

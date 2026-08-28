@@ -1,0 +1,245 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Properties - Global Royal Estate Manager
+{% endblock %}
+
+{% block css %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/properties.css') }}"
+>
+{% endblock %}
+
+{% block content %}
+
+<section class="properties-page">
+
+    <!-- =========================
+         PAGE HEADER
+    ========================== -->
+
+    <div class="page-header">
+
+        <div class="property-top-row">
+        <a href="{{ url_for('manager_dashboard') }}" class="back-btn">
+            ← Back
+        </a>
+
+        <!-- ====== SEARCH ===== -->
+        <div class="property-tools">
+
+            <div class="search-box">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="propertySearch"
+                    placeholder="Search properties..."
+                >
+
+            </div>
+
+        </div>
+        </div>
+
+        <div class="header-row">
+
+            <div>
+                <p class="section-label">
+                    ESTATE MANAGEMENT
+                </p>
+
+                <h1>Properties</h1>
+
+                <p>
+                    View and manage all your properties.
+                </p>
+            </div>
+
+            <a
+                href="{{ url_for('add_property') }}"
+                class="add-btn"
+            >
+                + Add Property
+            </a>
+
+        </div>
+
+    </div>    
+
+
+    <!-- =========================
+         PROPERTY CARDS
+    ========================== -->
+
+    <section class="properties-list" id="propertiesList">
+
+        {% if properties %}
+
+            {% for property in properties %}
+
+                <article
+                    class="property-card"
+                    data-property-name="{{ property.name | lower }}"
+                    data-property-type="{{ property.property_type | lower }}"
+                    data-property-address="{{ property.address | lower if property.address else '' }}"
+                >
+
+                    <div class="property-icon">
+                        🏢
+                    </div>
+
+                    <div class="property-card-info">
+
+                        <p class="property-type">
+                            {{ property.property_type }}
+                        </p>
+
+                        <h2>
+                            <a
+                                href="{{ url_for(
+                                    'property_details',
+                                    property_id=property.id
+                                ) }}"
+                            >
+                                {{ property.name }}
+                            </a>
+                        </h2>
+
+                        <p class="property-address">
+                            {{ property.address or "No address provided" }}
+                        </p>
+
+                    </div>
+
+
+                    <div class="property-details">
+
+                        <div>
+                            <span>Total Units</span>
+                            <strong>
+                                {{ property.total_units }}
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="{{ url_for(
+                            'property_details',
+                            property_id=property.id
+                        ) }}"
+                        class="view-btn"
+                    >
+                        View Property →
+                    </a>
+
+                </article>
+
+            {% endfor %}
+
+
+            <!-- No search results -->
+
+            <div
+                class="no-results"
+                id="noResults"
+            >
+                <h2>No properties found</h2>
+
+                <p>
+                    Try searching with a different property name.
+                </p>
+            </div>
+
+        {% else %}
+
+            <div class="empty-state">
+
+                <div class="empty-icon">
+                    🏢
+                </div>
+
+                <h2>No Properties Yet</h2>
+
+                <p>
+                    You haven't added any properties to your
+                    estate manager.
+                </p>
+
+                <a
+                    href="{{ url_for('add_property') }}"
+                    class="add-btn"
+                >
+                    + Add Your First Property
+                </a>
+
+            </div>
+
+        {% endif %}
+
+    </section>
+
+</section>
+
+
+<!-- =========================
+     PROPERTY SEARCH
+========================== -->
+
+<script>
+
+const searchInput = document.getElementById("propertySearch");
+const propertyCards = document.querySelectorAll(".property-card");
+const noResults = document.getElementById("noResults");
+
+if (searchInput) {
+
+    searchInput.addEventListener("input", function () {
+
+        const searchValue = this.value.toLowerCase().trim();
+
+        let visibleCards = 0;
+
+        propertyCards.forEach(function (card) {
+
+            const name = card.dataset.propertyName;
+            const type = card.dataset.propertyType;
+            const address = card.dataset.propertyAddress;
+
+            const matches =
+                name.includes(searchValue) ||
+                type.includes(searchValue) ||
+                address.includes(searchValue);
+
+            if (matches) {
+
+                card.style.display = "flex";
+                visibleCards++;
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        if (noResults) {
+
+            noResults.style.display =
+                visibleCards === 0 ? "block" : "none";
+
+        }
+
+    });
+
+}
+
+</script>
+
+{% endblock %}

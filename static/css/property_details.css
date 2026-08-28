@@ -1,0 +1,437 @@
+/* =========================
+   PROPERTY DETAILS
+========================= */
+
+.page-header {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 25px 7% 35px;
+    background: #f5f2ec;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 25px;
+    padding: 9px 15px;
+
+    background: #ffffff;
+    border: 1px solid #c9c5bd;
+    color: #263741;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #12232d;
+    border-color: #12232d;
+    color: #c66f48;
+    transform: translateX(-2px);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.header-row h1 {
+    color: #182d38;
+    font-size: 46px;
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+
+.header-row p {
+    color: #748087;
+    font-size: 15px;
+}
+
+
+/* =========================
+   ADD BUTTON
+========================= */
+
+.add-btn {
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    background: #c66f48;
+    border: 1px solid #c66f48;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.add-btn:hover {
+    background: #a95735;
+    border-color: #a95735;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   PROPERTY INFORMATION
+========================= */
+
+.property-info {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 7% 55px;
+    background: #f5f2ec;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.info-card {
+    background: #ffffff;
+    border: 1px solid #ddd8cf;
+    padding: 25px 22px;
+
+    min-height: 120px;
+
+    transition: 0.3s ease;
+}
+
+.info-card:hover {
+    border-color: #c66f48;
+    transform: translateY(-3px);
+}
+
+.info-card h3 {
+    color: #748087;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-card p {
+    color: #182d38;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* =========================
+   TENANT HEADING + SEARCH
+========================= */
+
+.tenant-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.tenant-heading .section-heading {
+    margin-bottom: 0;
+}
+
+/* =========================
+   TENANT SEARCH
+========================= */
+
+.tenant-tools {
+    width: fit-content;
+    padding: 5px;
+    background: #12232d;
+}
+
+.tenant-search {
+    width: 350px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+    border: 1px solid #d9d4ca;
+}
+
+.tenant-search span {
+    padding-left: 18px;
+    color: #c66f48;
+    font-size: 25px;
+}
+
+.tenant-search input {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+
+    border: none;
+    outline: none;
+
+    color: #182d38;
+    font-size: 14px;
+    background: transparent;
+}
+
+.tenant-search input::placeholder {
+    color: #9ba5a8;
+}
+
+/* =========================
+   TENANT SECTION
+========================= */
+
+.tenant-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 7% 80px;
+    background: #f5f2ec;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    color: #182d38;
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.section-heading p {
+    color: #748087;
+    font-size: 14px;
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+
+    background: #ffffff;
+    border: 1px solid #ddd8cf;
+}
+
+.tenant-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tenant-table th {
+    padding: 16px 18px;
+
+    background: #12232d;
+    color: #ffffff;
+
+    text-align: left;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.tenant-table td {
+    padding: 17px 18px;
+
+    border-bottom: 1px solid #e5e1d9;
+
+    color: #4f5d64;
+    font-size: 13px;
+}
+
+.tenant-table tbody tr {
+    transition: 0.2s ease;
+}
+
+.tenant-table tbody tr:hover {
+    background: #faf8f4;
+}
+
+.tenant-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.status.paid {
+    background: #e4f1e9;
+    color: #31734b;
+}
+
+.status.part-paid {
+    background: #f8eadc;
+    color: #a85f32;
+}
+
+.status.unpaid {
+    background: #f5e1df;
+    color: #a6473e;
+}
+
+
+/* =========================
+   TENANT ACTIONS
+========================= */
+
+.tenant-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.view-btn,
+.edit-btn,
+.tenant-actions button {
+    padding: 7px 11px;
+
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.view-btn {
+    background: #12232d;
+    border: 1px solid #12232d;
+    color: #ffffff;
+}
+
+.view-btn:hover {
+    background: #263b47;
+}
+
+
+.edit-btn {
+    background: #ffffff;
+    border: 1px solid #c9c5bd;
+    color: #263741;
+}
+
+.edit-btn:hover {
+    border-color: #c66f48;
+    color: #c66f48;
+}
+
+
+.tenant-actions button {
+    background: #ffffff;
+    border: 1px solid #d6aaa3;
+    color: #a6473e;
+}
+
+.tenant-actions button:hover {
+    background: #a6473e;
+    border-color: #a6473e;
+    color: #ffffff;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+    padding: 55px 30px;
+
+    background: #ffffff;
+    border: 1px solid #ddd8cf;
+
+    text-align: center;
+}
+
+.empty-state h3 {
+    color: #182d38;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: #748087;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .property-info {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .header-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .header-row h1 {
+        font-size: 38px;
+    }
+
+    .property-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .page-header {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .property-info {
+        padding-left: 5%;
+        padding-right: 5%;
+        grid-template-columns: 1fr;
+    }
+
+    .tenant-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+}

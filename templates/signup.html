@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Business Signup - Global Royal
+{% endblock %}
+
+{% block css %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/signup.css') }}"
+>
+{% endblock %}
+
+{% block content %}
+
+<section class="signup-page">
+
+    <div class="signup-card">
+
+        <!-- Header -->
+        <div class="signup-header">
+
+            <p class="signup-label">
+                GLOBAL ROYAL ESTATE MANAGER
+            </p>
+
+            <h1>
+                Create Your Business Account
+            </h1>
+
+            <p>
+                Set up your estate management workspace
+                and start managing your properties.
+            </p>
+
+        </div>
+
+
+        <!-- Signup Form -->
+        <form method="POST" class="signup-form">
+
+            {{ form.hidden_tag() }}
+
+
+            <div class="form-group">
+
+                {{ form.business_name.label }}
+
+                {{ form.business_name(
+                    placeholder="Enter business name"
+                ) }}
+
+            </div>
+
+
+            <div class="form-group">
+
+                {{ form.manager_name.label }}
+
+                {{ form.manager_name(
+                    placeholder="Enter manager name"
+                ) }}
+
+            </div>
+
+
+            <div class="form-group">
+
+                {{ form.email.label }}
+
+                {{ form.email(
+                    placeholder="Enter email address"
+                ) }}
+
+            </div>
+
+
+            <div class="form-group">
+
+                {{ form.phone.label }}
+
+                {{ form.phone(
+                    placeholder="Enter phone number"
+                ) }}
+
+            </div>
+
+
+            <div class="form-group">
+
+                {{ form.password.label }}
+
+                {{ form.password(
+                    placeholder="Create a password"
+                ) }}
+
+            </div>
+
+
+            <div class="form-group">
+
+                {{ form.confirm_password.label }}
+
+                {{ form.confirm_password(
+                    placeholder="Confirm your password"
+                ) }}
+
+            </div>
+
+
+            <div class="form-submit">
+
+                {{ form.submit(
+                    class="signup-btn"
+                ) }}
+
+            </div>
+
+        </form>
+
+
+        <!-- Login Link -->
+        <div class="login-link">
+
+            <p>
+                Already have an account?
+            </p>
+
+            <a href="{{ url_for('login') }}">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,271 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Notifications - Global Royal Estate Manager
+{% endblock %}
+
+{% block css %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/notifications.css') }}"
+>
+{% endblock %}
+
+{% block content %}
+
+<section class="notifications-page">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+
+        <a href="{{ url_for('manager_dashboard') }}" class="back-btn">
+            ← Back
+        </a>
+
+        <h1>
+            Notifications
+        </h1>
+
+        <p>
+            Stay informed about expired and upcoming rental periods.
+        </p>
+
+    </div>
+
+
+    <!-- EXPIRED RENT -->
+    <section class="notification-section">
+
+        <div class="notification-heading">
+
+            <div>
+                <span class="section-label">
+                    ATTENTION REQUIRED
+                </span>
+
+                <h2>
+                    Expired Rent
+                </h2>
+            </div>
+
+            <span class="notification-count expired-count">
+                {{ expired_tenants|length }}
+            </span>
+
+        </div>
+
+
+        {% if expired_tenants %}
+
+            <div class="table-container">
+
+                <table class="notification-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Tenant</th>
+                            <th>Property</th>
+                            <th>Unit</th>
+                            <th>Rent End</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for tenant in expired_tenants %}
+
+                            <tr>
+
+                                <td>
+                                    <strong>
+                                        {{ tenant.name }}
+                                    </strong>
+
+                                    <small>
+                                        {{ tenant.phone }}
+                                    </small>
+                                </td>
+
+                                <td>
+                                    {{ tenant.property.name }}
+                                </td>
+
+                                <td>
+                                    {{ tenant.unit_number }}
+                                </td>
+
+                                <td>
+                                    {{ tenant.rent_end }}
+                                </td>
+
+                                <td>
+                                    <a
+                                        href="{{ url_for(
+                                            'tenant_details',
+                                            tenant_id=tenant.id
+                                        ) }}"
+                                        class="view-tenant-btn"
+                                    >
+                                        View Tenant →
+                                    </a>
+                                </td>
+
+                            </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        {% else %}
+
+            <div class="empty-notification">
+
+                <span>✓</span>
+
+                <div>
+                    <strong>No expired rents</strong>
+
+                    <p>
+                        All rental periods are currently up to date.
+                    </p>
+                </div>
+
+            </div>
+
+        {% endif %}
+
+    </section>
+
+
+    <!-- DUE SOON -->
+    <section class="notification-section">
+
+        <div class="notification-heading">
+
+            <div>
+                <span class="section-label">
+                    UPCOMING DEADLINES
+                </span>
+
+                <h2>
+                    Due Within 90 Days
+                </h2>
+            </div>
+
+            <span class="notification-count due-count">
+                {{ due_soon_tenants|length }}
+            </span>
+
+        </div>
+
+
+        {% if due_soon_tenants %}
+
+            <div class="table-container">
+
+                <table class="notification-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Tenant</th>
+                            <th>Property</th>
+                            <th>Unit</th>
+                            <th>Rent End</th>
+                            <th>Remaining</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for tenant in due_soon_tenants %}
+
+                            <tr>
+
+                                <td>
+                                    <strong>
+                                        {{ tenant.name }}
+                                    </strong>
+
+                                    <small>
+                                        {{ tenant.phone }}
+                                    </small>
+                                </td>
+
+                                <td>
+                                    {{ tenant.property.name }}
+                                </td>
+
+                                <td>
+                                    {{ tenant.unit_number }}
+                                </td>
+
+                                <td>
+                                    {{ tenant.rent_end }}
+                                </td>
+
+                                <td>
+
+                                    <span class="days-remaining">
+                                        {{ (tenant.rent_end - today).days }}
+                                        days
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    <a
+                                        href="{{ url_for(
+                                            'tenant_details',
+                                            tenant_id=tenant.id
+                                        ) }}"
+                                        class="view-tenant-btn"
+                                    >
+                                        View Tenant →
+                                    </a>
+
+                                </td>
+
+                            </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        {% else %}
+
+            <div class="empty-notification">
+
+                <span>✓</span>
+
+                <div>
+                    <strong>No upcoming rent deadlines</strong>
+
+                    <p>
+                        No rents are due within the next 90 days.
+                    </p>
+                </div>
+
+            </div>
+
+        {% endif %}
+
+    </section>
+
+</section>
+
+{% endblock %}

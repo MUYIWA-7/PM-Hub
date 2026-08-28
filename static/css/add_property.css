@@ -1,0 +1,217 @@
+/* =========================
+   ADD PROPERTY PAGE
+========================= */
+
+.page-header {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 25px 30px 35px;
+    background: #f5f2ec;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 28px;
+    padding: 9px 15px;
+
+    background: #ffffff;
+    border: 1px solid #c9c5bd;
+    color: #263741;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #12232d;
+    border-color: #12232d;
+    color: #c66f48;
+    transform: translateX(-2px);
+}
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.page-header h1 {
+    color: #182d38;
+    font-size: 46px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #748087;
+    font-size: 16px;
+}
+
+
+/* =========================
+   FORM SECTION
+========================= */
+
+.form-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 30px 80px;
+    background: #f5f2ec;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.property-form {
+    background: #ffffff;
+    border: 1px solid #ddd8cf;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(25, 39, 47, 0.07);
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #182d38;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.form-control {
+    width: 100%;
+    padding: 14px 15px;
+
+    background: #f5f2ec;
+    border: 1px solid #d9d4ca;
+
+    color: #182d38;
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s ease;
+}
+
+.form-control:focus {
+    background: #ffffff;
+    border-color: #c66f48;
+    box-shadow: 0 0 0 3px rgba(198, 111, 72, 0.10);
+}
+
+.form-control::placeholder {
+    color: #9ba5a8;
+}
+
+
+/* =========================
+   SELECT
+========================= */
+
+select.form-control {
+    cursor: pointer;
+}
+
+
+/* =========================
+   FORM ERRORS
+========================= */
+
+.form-error {
+    display: block;
+    margin-top: 7px;
+
+    color: #b64f35;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   FORM ACTIONS
+========================= */
+
+.form-actions {
+    padding-top: 10px;
+    border-top: 1px solid #e5e1d9;
+}
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+
+    background: #c66f48;
+    border: 1px solid #c66f48;
+
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #a95735;
+    border-color: #a95735;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .page-header {
+        padding: 30px 5% 30px;
+    }
+
+    .form-section {
+        padding: 0 5% 60px;
+    }
+
+    .property-form {
+        padding: 25px;
+    }
+
+    .page-header h1 {
+        font-size: 38px;
+    }
+
+}

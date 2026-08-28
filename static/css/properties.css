@@ -1,0 +1,380 @@
+/* =========================
+   PROPERTIES PAGE
+========================= */
+
+.properties-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 25px 7% 80px;
+    background: #f5f2ec;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-header {
+    margin-bottom: 15px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 25px;
+    padding: 9px 15px;
+    background: #ffffff;
+    border: 1px solid #c9c5bd;
+    color: #263741;
+    font-size: 15px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #12232d;
+    border-color: #12232d;
+    color: #c66f48;
+    transform: translateX(-2px);
+}
+
+
+.header-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.section-label {
+    color: #c66f48;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    margin-bottom: 10px;
+}
+
+.header-row h1 {
+    color: #182d38;
+    font-size: 52px;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.header-row p:last-child {
+    color: #748087;
+    font-size: 16px;
+}
+
+
+/* =========================
+   ADD PROPERTY BUTTON
+========================= */
+
+.add-btn {
+    display: inline-block;
+    padding: 14px 22px;
+    background: #c66f48;
+    color: #ffffff;
+    font-weight: 700;
+    border: 1px solid #c66f48;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+.add-btn:hover {
+    background: #a95735;
+    border-color: #a95735;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.property-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.property-top-row .back-btn {
+    margin-bottom: 0;
+}
+
+.property-tools {
+    width: fit-content;
+    margin-bottom: 15px;
+    padding: 5px;
+    background: #12232d;
+}
+
+.search-box {
+    width: 350px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #d9d4ca;
+}
+
+.search-box span {
+    padding-left: 18px;
+    color: #c66f48;
+    font-size: 25px;
+}
+
+.search-box input {
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    color: #182d38;
+    font-size: 14px;
+    background: transparent;
+}
+
+.search-box input::placeholder {
+    color: #9ba5a8;
+}
+
+
+/* =========================
+   PROPERTY GRID
+========================= */
+
+.properties-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+
+/* =========================
+   PROPERTY CARD
+========================= */
+
+.property-card {
+    min-height: 320px;
+    padding: 28px;
+    background: #ffffff;
+    border: 1px solid #ddd8cf;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.property-card:hover {
+    transform: translateY(-7px);
+    border-color: #c66f48;
+    box-shadow: 0 18px 40px rgba(25, 39, 47, 0.10);
+}
+
+
+/* =========================
+   PROPERTY ICON
+========================= */
+
+.property-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f5f2ec;
+    border-left: 3px solid #c66f48;
+
+    font-size: 20px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   PROPERTY INFORMATION
+========================= */
+
+.property-type {
+    color: #c66f48;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 7px;
+}
+
+.property-card-info h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.property-card-info h2 a {
+    color: #182d38;
+    transition: 0.3s ease;
+}
+
+.property-card-info h2 a:hover {
+    color: #c66f48;
+}
+
+.property-address {
+    color: #748087;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   PROPERTY DETAILS
+========================= */
+
+.property-details {
+    margin-top: auto;
+    margin-bottom: 22px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e1d9;
+}
+
+.property-details span {
+    display: block;
+    color: #8a9498;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.property-details strong {
+    color: #182d38;
+    font-size: 24px;
+}
+
+
+/* =========================
+   VIEW BUTTON
+========================= */
+
+.view-btn {
+    display: block;
+    padding: 12px 15px;
+
+    text-align: center;
+
+    border: 1px solid #9ba5a8;
+    color: #263741;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.view-btn:hover {
+    background: #12232d;
+    border-color: #12232d;
+    color: #ffffff;
+}
+
+
+/* =========================
+   NO RESULTS
+========================= */
+
+.no-results {
+    display: none;
+
+    grid-column: 1 / -1;
+
+    padding: 60px 20px;
+    text-align: center;
+
+    background: #ffffff;
+    border: 1px solid #ddd8cf;
+}
+
+.no-results h2 {
+    color: #182d38;
+    margin-bottom: 8px;
+}
+
+.no-results p {
+    color: #748087;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+    grid-column: 1 / -1;
+
+    padding: 80px 30px;
+    text-align: center;
+
+    background: #ffffff;
+    border: 1px solid #ddd8cf;
+}
+
+.empty-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.empty-state h2 {
+    color: #182d38;
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    color: #748087;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .properties-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .properties-page {
+        padding: 40px 5% 60px;
+    }
+
+    .header-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .header-row h1 {
+        font-size: 42px;
+    }
+
+    .properties-list {
+        grid-template-columns: 1fr;
+    }
+
+}

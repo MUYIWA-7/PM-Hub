@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Edit Tenant - Global Royal Estate Manager
+{% endblock %}
+
+{% block css %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/add_tenant.css') }}"
+>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <a href="{{ url_for('property_details', property_id=tenant.property_id) }}"
+    class="back-btn">
+        ← Back
+    </a>
+
+    <h1>
+        Edit Tenant
+    </h1>
+
+    <p>
+        Update the information for
+        <strong>{{ tenant.name }}</strong>.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     EDIT TENANT FORM
+========================== -->
+
+<section class="form-section">
+
+    <form
+        method="POST"
+        class="tenant-form"
+    >
+
+        {{ form.hidden_tag() }}
+
+
+        <!-- Tenant Name -->
+
+        <div class="form-group">
+
+            {{ form.name.label }}
+
+            {{ form.name(
+                class="form-control",
+                placeholder="Enter tenant name"
+            ) }}
+
+            {% for error in form.name.errors %}
+
+                <span class="form-error">
+                    {{ error }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Phone -->
+
+        <div class="form-group">
+
+            {{ form.phone.label }}
+
+            {{ form.phone(
+                class="form-control",
+                placeholder="Enter phone number"
+            ) }}
+
+            {% for error in form.phone.errors %}
+
+                <span class="form-error">
+                    {{ error }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Unit Number -->
+
+        <div class="form-group">
+
+            {{ form.unit_number.label }}
+
+            {{ form.unit_number(
+                class="form-control",
+                placeholder="e.g. A01, Room 5, Shop 2"
+            ) }}
+
+            {% for error in form.unit_number.errors %}
+
+                <span class="form-error">
+                    {{ error }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- Move-in Date --> 
+
+        <div class="form-group"> 
+            {{ form.move_in_date.label }} 
+            
+            {{ form.move_in_date( class="form-control" ) }} 
+            
+            {% for error in form.move_in_date.errors %} 
+            
+            <span class="form-error"> 
+                {{ error }} 
+            </span> 
+
+            {% endfor %} 
+            
+        </div>
+
+        <!-- Annual Rent -->
+
+        <div class="form-group">
+
+            {{ form.annual_rent.label }}
+
+            {{ form.annual_rent(
+                class="form-control",
+                placeholder="Enter annual rent"
+            ) }}
+
+            {% for error in form.annual_rent.errors %}
+
+                <span class="form-error">
+                    {{ error }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Rent Start -->
+
+        <div class="form-group">
+
+            {{ form.rent_start.label }}
+
+            {{ form.rent_start(
+                class="form-control"
+            ) }}
+
+            {% for error in form.rent_start.errors %}
+
+                <span class="form-error">
+                    {{ error }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Rent End -->
+
+        <div class="form-group">
+
+            {{ form.rent_end.label }}
+
+            {{ form.rent_end(
+                class="form-control"
+            ) }}
+
+            {% for error in form.rent_end.errors %}
+
+                <span class="form-error">
+                    {{ error }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+
+        <!-- Form Actions -->
+
+        <div class="form-actions">
+
+            {{ form.submit(
+                value="Update Tenant",
+                class="submit-btn"
+            ) }}
+
+            <a
+                href="{{ url_for(
+                    'property_details',
+                    property_id=tenant.property_id
+                ) }}"
+                class="cancel-btn"
+            >
+                Cancel
+            </a>
+
+        </div>
+
+    </form>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Global Royal Estate Manager</title>
+</head>
+
+<body style="
+    margin: 0;
+    padding: 0;
+    background: #f5f2ec;
+    font-family: Arial, sans-serif;
+">
+
+    <div style="
+        max-width: 600px;
+        margin: 40px auto;
+        background: #ffffff;
+        border: 1px solid #ddd8cf;
+    ">
+
+        <!-- HEADER -->
+
+        <div style="
+            padding: 30px;
+            background: #182d38;
+            color: #ffffff;
+        ">
+
+            <h1 style="
+                margin: 0;
+                font-size: 24px;
+            ">
+                Global Royal Estate Manager
+            </h1>
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div style="
+            padding: 35px;
+            color: #263741;
+        ">
+
+            <h2 style="
+                color: #182d38;
+                margin-top: 0;
+            ">
+                Welcome, {{ tenant.name }}
+            </h2>
+
+            <p>
+                Your tenant account has been created by your
+                property manager.
+            </p>
+
+            <p>
+                You can now access your property, rent and
+                payment information through Global Royal
+                Estate Manager.
+            </p>
+
+
+            <!-- LOGIN DETAILS -->
+
+            <div style="
+                margin: 25px 0;
+                padding: 20px;
+                background: #f5f2ec;
+                border-left: 4px solid #c66f48;
+            ">
+
+                <p style="margin: 0 0 12px;">
+                    <strong>Login Email:</strong>
+                    {{ email }}
+                </p>
+
+                <p style="margin: 0;">
+                    <strong>Temporary Password:</strong>
+                    {{ temporary_password }}
+                </p>
+
+            </div>
+
+
+            <p>
+                Please log in using these credentials and
+                change your password immediately after
+                your first login.
+            </p>
+
+
+            <!-- LOGIN BUTTON -->
+
+            <div style="
+                text-align: center;
+                margin: 30px 0;
+            ">
+
+                <a href="{{ login_url }}"
+                   style="
+                       display: inline-block;
+                       padding: 14px 25px;
+                       background: #c66f48;
+                       color: #ffffff;
+                       text-decoration: none;
+                       font-weight: bold;
+                   ">
+                    Login to Your Account
+                </a>
+
+            </div>
+
+
+            <p style="
+                color: #748087;
+                font-size: 13px;
+            ">
+                If you did not expect this account,
+                please contact your property manager.
+            </p>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <div style="
+            padding: 20px;
+            background: #f5f2ec;
+            text-align: center;
+            color: #748087;
+            font-size: 12px;
+        ">
+
+            © Global Royal Estate Manager
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

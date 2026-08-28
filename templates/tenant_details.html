@@ -1,0 +1,263 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ tenant.name }} - Global Royal Estate Manager
+{% endblock %}
+
+{% block css %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/tenant_details.css') }}"
+>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+
+    <a href="javascript:history.back()" class="back-btn">
+        ← Back
+    </a>
+
+    <h1>
+        {{ tenant.name }}
+    </h1>
+
+    <p>
+        Tenant details and payment information.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     TENANT INFORMATION
+========================== -->
+
+<section class="top-section">
+
+    <div class="tenant-info">
+
+        <h2>Tenant Information</h2>
+
+        <p>
+            <strong>Name:</strong>
+            {{ tenant.name }}
+        </p>
+
+        <p>
+            <strong>Phone:</strong>
+            {{ tenant.phone }}
+        </p>
+
+        <p>
+            <strong>Unit:</strong>
+            {{ tenant.unit_number }}
+        </p>
+
+        <p>
+            <strong>Move-in Date:</strong>
+            {{ tenant.move_in_date }}
+        </p>
+
+        <p>
+            <strong>Rent Period:</strong>
+            {{ tenant.rent_start }} -
+            {{ tenant.rent_end }}
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         PAYMENT SUMMARY
+    ========================== -->
+
+    <div class="payment-summary">
+
+        <h2>Payment Summary</h2>
+
+        <p>
+            <strong>Annual Rent:</strong>
+            ₦{{ formatted_annual_rent }}
+        </p>
+
+        <p>
+            <strong>Amount Paid:</strong>
+            ₦{{ formatted_amount_paid }}
+        </p>
+
+        <p>
+            <strong>Outstanding Balance:</strong>
+            ₦{{ formatted_outstanding_balance }}
+        </p>
+
+        <p>
+            <strong>Next Due Date:</strong>
+            {{ tenant.rent_end }}
+        </p>
+
+        <p>
+            <strong>Status:</strong>
+
+            {% if status == "Paid" %}
+
+                <span class="status paid">
+                    Paid
+                </span>
+
+            {% elif status == "Part Paid" %}
+
+                <span class="status part-paid">
+                    Part Paid
+                </span>
+
+            {% else %}
+
+                <span class="status unpaid">
+                    Unpaid
+                </span>
+
+            {% endif %}
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     RECORD PAYMENT
+========================== -->
+
+<div class="bottom-section">
+<section class="record-payment">
+
+    <h2>Record Payment</h2>
+
+    <form
+        method="POST"
+        class="payment-form"
+    >
+
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+
+            {{ form.amount.label }}
+
+            {{ form.amount(
+                class="form-control",
+                placeholder="Enter amount"
+            ) }}
+
+            {% for error in form.amount.errors %}
+
+                <span class="form-error">
+                    {{ error }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+
+        <div class="form-group">
+
+            {{ form.payment_date.label }}
+
+            {{ form.payment_date(
+                class="form-control"
+            ) }}
+
+            {% for error in form.payment_date.errors %}
+
+                <span class="form-error">
+                    {{ error }}
+                </span>
+
+            {% endfor %}
+
+        </div>
+
+
+        <div class="form-group">
+
+            {{ form.submit(
+                class="save-payment-btn"
+            ) }}
+
+        </div>
+
+    </form>
+
+</section>
+
+
+<!-- =========================
+     PAYMENT HISTORY
+========================== -->
+
+<section class="payment-history">
+
+    <h2>
+        Payment History
+    </h2>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Date</th>
+                    <th>Amount</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                {% if payments %}
+
+                    {% for payment in payments %}
+
+                        <tr>
+
+                            <td>
+                                {{ payment.payment_date }}
+                            </td>
+
+                            <td>
+                                ₦{{ "{:,.2f}".format(payment.amount) }}
+                            </td>
+
+                        </tr>
+
+                    {% endfor %}
+
+                {% else %}
+
+                    <tr>
+
+                        <td colspan="2">
+                            No payments recorded yet.
+                        </td>
+
+                    </tr>
+
+                {% endif %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+</div>
+
+{% endblock %}

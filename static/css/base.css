@@ -1,0 +1,355 @@
+/* =========================
+   GLOBAL ROYAL
+   BASE STYLES
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #172033;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   LINKS
+========================== */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   MAIN HEADER
+========================== */
+
+.main-header {
+    background: #0d1b2a;
+    border-bottom: 1px solid rgba(218, 165, 87, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* =========================
+   NAVBAR
+========================== */
+
+.navbar {
+    max-width: 1400px;
+    margin: auto;
+
+    min-height: 76px;
+
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================
+   LOGO
+========================== */
+
+.navbar-logo {
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.1;
+}
+
+.navbar-logo span {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #d9aa61;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   NAV LINKS
+========================== */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-links a {
+    padding: 10px 16px;
+
+    color: #d9e1ea;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    border-radius: 6px;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+
+/* =========================
+   NOTIFICATION
+========================== */
+
+.notification-link {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+}
+
+.notification-badge {
+    min-width: 21px;
+    height: 21px;
+
+    padding: 0 6px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #d9aa61;
+    color: #0d1b2a;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+/* =========================
+   LOGOUT
+========================== */
+
+.logout-link {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.logout-link:hover {
+    border-color: rgba(217, 170, 97, 0.5);
+}
+
+
+/* =========================
+   PAGE CONTENT
+========================== */
+
+.page-content {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 45px 40px 70px;
+}
+
+
+/* =========================
+   FLASH MESSAGES
+========================== */
+
+.flash-container {
+    position: fixed;
+
+    top: 95px;
+    right: 30px;
+
+    z-index: 2000;
+
+    width: min(380px, calc(100% - 40px));
+}
+
+.flash-message {
+    padding: 14px 18px;
+
+    margin-bottom: 10px;
+
+    background: #ffffff;
+
+    border-left: 4px solid #d9aa61;
+
+    border-radius: 6px;
+
+    box-shadow: 0 8px 25px rgba(13, 27, 42, 0.12);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   FLASH COLORS
+========================== */
+
+.flash-message.success {
+    border-left-color: #2f855a;
+}
+
+.flash-message.error {
+    border-left-color: #c53030;
+}
+
+.flash-message.warning {
+    border-left-color: #d69e2e;
+}
+
+.flash-message.info {
+    border-left-color: #3182ce;
+}
+
+
+/* =========================
+   HEADINGS
+========================== */
+
+h1,
+h2,
+h3,
+h4 {
+    color: #0d1b2a;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 19px;
+}
+
+
+/* =========================
+   BUTTONS
+========================== */
+
+button,
+input[type="submit"] {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================== */
+
+.back-btn {
+    display: inline-flex;
+
+    margin-bottom: 25px;
+
+    color: #526174;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+.back-btn:hover {
+    color: #b8843d;
+}
+
+
+/* =========================
+   MOBILE
+========================== */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        padding: 18px 25px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        padding: 8px 11px;
+        font-size: 13px;
+    }
+
+    .page-content {
+        padding: 35px 25px 60px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .navbar {
+        padding: 18px;
+    }
+
+    .nav-links {
+        gap: 4px;
+    }
+
+    .nav-links a {
+        padding: 7px 8px;
+        font-size: 12px;
+    }
+
+    .page-content {
+        padding: 30px 18px 50px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+}
