@@ -53,7 +53,7 @@ def send_tenant_credentials(
     message = EmailMessage()
 
     message["Subject"] = (
-        "Welcome to Global Royal Estate Manager"
+        "Welcome to PM-Hub"
     )
 
     message["From"] = MAIL_USERNAME
@@ -66,7 +66,7 @@ def send_tenant_credentials(
 Hello {tenant.name},
 
 Your tenant account has been created on
-Global Royal Estate Manager.
+PM-Hub.
 
 Login email: {tenant.user.email}
 Temporary password: {temporary_password}
@@ -74,7 +74,7 @@ Temporary password: {temporary_password}
 Please log in and change your temporary password.
 
 Regards,
-Global Royal Estate Manager
+PM-Hub
 """
     )
 
